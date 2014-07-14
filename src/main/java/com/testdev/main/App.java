@@ -1,14 +1,12 @@
 package com.testdev.main;
 
-import java.util.Date;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.testdev.domain.Event;
+import com.testdev.domain.Person;
 
 public class App {
     public static void main(String[] args) {
@@ -22,11 +20,10 @@ public class App {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
-        Event theEvent = new Event();
-        theEvent.setTitle("New Event 5");
-        theEvent.setDate(new Date());
-        session.save(theEvent);
+        Person aPerson = (Person) session.load(Person.class, 1L);
+        System.out.println(aPerson);
 
         session.getTransaction().commit();
+        StandardServiceRegistryBuilder.destroy(serviceRegistry);
     }
 }

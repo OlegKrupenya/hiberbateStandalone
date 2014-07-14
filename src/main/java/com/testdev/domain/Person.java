@@ -1,12 +1,25 @@
 package com.testdev.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Person {
     private Long id;
     private int age;
     private String firstname;
     private String lastname;
+    
+    private Set<Event> events = new HashSet<>();
 
     public Person() {
+    }
+    
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        this.events = events;
     }
 
     public Long getId() {
