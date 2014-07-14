@@ -20,7 +20,10 @@ public class App {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
-        Person aPerson = (Person) session.load(Person.class, 1L);
+        Person aPerson = (Person) session
+                .createQuery("select p from Person p left join fetch p.events where p.id = :pid")
+                .setParameter("pid", 1L)
+                .uniqueResult();
         System.out.println(aPerson);
 
         session.getTransaction().commit();
