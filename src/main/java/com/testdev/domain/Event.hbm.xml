@@ -12,10 +12,10 @@
 		<property name="date" type="date" column="EVENT_DATE" />
 		<property name="title" />
 
-<!-- 		<set name="participants" table="PERSON_EVENT"> -->
-<!-- 			<key column="EVENT_ID" /> -->
-<!-- 			<many-to-many column="PERSON_ID" class="Person" /> -->
-<!-- 		</set> -->
+		<set name="participants" table="PERSON_EVENT">
+			<key column="EVENT_ID" />
+			<many-to-many column="PERSON_ID" class="Person" />
+		</set>
 	</class>
 
 </hibernate-mapping>

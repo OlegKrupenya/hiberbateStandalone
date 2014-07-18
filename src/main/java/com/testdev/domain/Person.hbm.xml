@@ -5,52 +5,18 @@
 
 <hibernate-mapping package="com.testdev.domain">
 
-	<class entity-name="Person" table="PERSON">
-		<id name="id" type="long" column="PERSON_ID">
+	<class name="Person" table="PERSON" schema="spring_test" proxy="com.testdev.domain.Person" >
+		<id name="id" column="PERSON_ID">
 			<generator class="native" />
 		</id>
-		<property name="age"  type="int" />
-		<property name="firstname" type="string" />
-		<property name="lastname" type="string" />
+		<property name="age" />
+		<property name="firstname" />
+		<property name="lastname" />
 
-<!-- 		<set name="events" table="PERSON_EVENT"> -->
-<!-- 			<key column="PERSON_ID" /> -->
-<!-- 			<many-to-many column="EVENT_ID" class="Event" /> -->
-<!-- 		</set> -->
+		<set name="events" table="PERSON_EVENT">
+			<key column="PERSON_ID" />
+			<many-to-many column="EVENT_ID" class="Event" />
+		</set>
 	</class>
-	
-<!-- 	<class entity-name="Person" table="PERSON"> -->
-
-<!--         <id name="id" -->
-<!--             type="long" -->
-<!--             column="PERSON_ID"> -->
-<!--             <generator class="native"/> -->
-<!--         </id> -->
-
-<!--         <property name="age" -->
-<!--             column="age" -->
-<!--             type="int"/> -->
-
-<!--         <property name="firstname" -->
-<!--             column="firstname" -->
-<!--             type="string"/> -->
-            
-<!--         <property name="lastname" -->
-<!--             column="lastname" -->
-<!--             type="string"/> -->
-
-<!--         <many-to-one name="organization" -->
-<!--             column="ORGANIZATION_ID" -->
-<!--             class="Organization"/> -->
-
-<!--         <bag name="orders" -->
-<!--             inverse="true" -->
-<!--             lazy="false" -->
-<!--             cascade="all"> -->
-<!--             <key column="CUSTOMER_ID"/> -->
-<!--             <one-to-many class="Order"/> -->
-<!--         </bag> -->
-
-<!--     </class> -->
 
 </hibernate-mapping>
