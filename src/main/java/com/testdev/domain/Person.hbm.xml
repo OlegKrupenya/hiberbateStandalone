@@ -9,14 +9,17 @@
 		<id name="id" column="PERSON_ID">
 			<generator class="native" />
 		</id>
+		<discriminator column="lastname" type="string" />
 		<version name="version" type="integer"/>
 		<property name="age" />
 		<property name="firstname" />
-		<property name="lastname" />
+<!-- 		<property name="lastname" /> -->
 		<set name="events" table="PERSON_EVENT">
 			<key column="PERSON_ID" />
 			<many-to-many column="EVENT_ID" class="Event" />
 		</set>
+		<subclass name="Employee" discriminator-value="70">
+        </subclass>
 
 	</class>
 	

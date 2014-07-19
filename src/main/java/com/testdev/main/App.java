@@ -8,6 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import com.testdev.domain.Employee;
 import com.testdev.domain.Event;
 import com.testdev.domain.Person;
 
@@ -29,7 +30,7 @@ public class App {
 //                .createQuery("select p from Person p left join fetch p.events where p.id = :pid")
 //                .setParameter("pid", 1L)
 //                .uniqueResult();
-        Person aPerson  = (Person) session.load(Person.class, 7L);
+        Employee aPerson  = (Employee) session.load(Employee.class, 7L);
 //        Person aPerson  = new Person();
 //        aPerson.setAge(70);
 //        aPerson.setFirstname("70");
