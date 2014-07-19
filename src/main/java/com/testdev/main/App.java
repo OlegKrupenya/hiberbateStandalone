@@ -29,13 +29,12 @@ public class App {
 //                .createQuery("select p from Person p left join fetch p.events where p.id = :pid")
 //                .setParameter("pid", 1L)
 //                .uniqueResult();
-        //Person aPerson  = (Person) session.load(Person.class, 1L);
-        Person aPerson  = new Person();
-        aPerson.setFirstname("Alex");
-        aPerson.setLastname("Sidorov");
-        aPerson.setId(1L);
-        aPerson.setAge(12);
-        
+        Person aPerson  = (Person) session.load(Person.class, 7L);
+//        Person aPerson  = new Person();
+//        aPerson.setAge(70);
+//        aPerson.setFirstname("70");
+//        aPerson.setLastname("70");
+//        aPerson.setVersion(1);
         System.out.println(aPerson);
 //        Event event = new Event();
 //        event.setTitle("New 9");
@@ -44,6 +43,7 @@ public class App {
         /*aPerson.getEvents().add(event);
 
         */
+        aPerson.setFirstname("updated name 2");
         session.update(aPerson);
        
         session.getTransaction().commit();

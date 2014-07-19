@@ -5,6 +5,8 @@ create table PERSON (
     LASTNAME  VARCHAR(50) NOT NULL
 );
 
+alter table person add version integer;
+
 insert into PERSON (AGE, FIRSTNAME, LASTNAME) value (22, 'Ivan', 'Ivanov');
 insert into PERSON (AGE, FIRSTNAME, LASTNAME) value (32, 'Petr', 'Petrov');
 insert into PERSON (AGE, FIRSTNAME, LASTNAME) value (42, 'Semen', 'Semenov');

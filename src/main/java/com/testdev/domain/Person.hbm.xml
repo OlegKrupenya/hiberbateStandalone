@@ -5,18 +5,20 @@
 
 <hibernate-mapping package="com.testdev.domain">
 
-	<class name="Person" table="PERSON" select-before-update="true" >
+	<class name="Person" table="PERSON">
 		<id name="id" column="PERSON_ID">
 			<generator class="native" />
 		</id>
+		<version name="version" type="integer"/>
 		<property name="age" />
 		<property name="firstname" />
 		<property name="lastname" />
-
 		<set name="events" table="PERSON_EVENT">
 			<key column="PERSON_ID" />
 			<many-to-many column="EVENT_ID" class="Event" />
 		</set>
+
 	</class>
+	
 
 </hibernate-mapping>

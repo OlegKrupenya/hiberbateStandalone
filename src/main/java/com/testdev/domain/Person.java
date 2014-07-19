@@ -8,6 +8,7 @@ public class Person {
     private int age;
     private String firstname;
     private String lastname;
+    private Integer version; 
     
     private Set<Event> events = new HashSet<>();
 
@@ -53,6 +54,13 @@ public class Person {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
     
 }
